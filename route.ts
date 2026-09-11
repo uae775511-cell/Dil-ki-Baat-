@@ -1,0 +1,2 @@
+import {NextResponse} from "next/server"; import Stripe from "stripe";
+export async function POST(){const key=process.env.STRIPE_SECRET_KEY;if(!key)return NextResponse.json({error:"Stripe is not configured."},{status:500});const stripe=new Stripe(key);return NextResponse.json({error:"Add your Stripe Price ID and create a Checkout Session here after choosing an approved payment setup for your dating business."},{status:501});}
